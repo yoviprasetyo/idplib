@@ -1,4 +1,4 @@
-package idp
+package idplib
 
 import "encoding/json"
 
