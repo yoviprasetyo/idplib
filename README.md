@@ -1,1 +1,2 @@
-# IDP Lib Package
+# IDP Lib
+IDP Library
