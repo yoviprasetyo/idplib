@@ -1,11 +1,22 @@
 package sekolahdesain
 
-// IDP struct
+import "encoding/json"
+
+// IDP struct.
 type IDP struct {
-	Raw string
+	Sub           string `json:"sub"`
+	EmailVerified bool   `json:"email_verified"`
+	Name          string `json:"name"`
+	Username      string `json:"preferred_username"`
+	Email         string `json:"email"`
 }
 
-// SetRaw json to IDP
-func (idp IDP) SetRaw(json string) {
-	idp.Raw = json
+// Extract json string to IDP.
+func Extract(jsonString string) (IDP, error) {
+	var idp IDP
+	err := json.Unmarshal([]byte(jsonString), &idp)
+	if err != nil {
+		return idp, err
+	}
+	return idp, nil
 }
