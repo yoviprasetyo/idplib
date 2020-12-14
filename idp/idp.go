@@ -1,4 +1,4 @@
-package sekolahdesain
+package idp
 
 import "encoding/json"
 
